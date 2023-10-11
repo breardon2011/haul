@@ -25,7 +25,7 @@ export default function ListView(){
             const data = await response.json() 
 
             
-            console.log(`Data: ${JSON.stringify(data)}`)
+          
             setData(data)
             setFilteredInspections(data)
             setIsLoading(false)
@@ -73,7 +73,7 @@ export default function ListView(){
     return (
         <div className="m-5">
         <h1 className="text-xl py-5">DOT Inspections</h1>
-        <div className="container bg-orange-300 rounded">
+        <div className="container bg-slate-300 rounded">
         <select onChange={handleBASICChange} className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
     <option value="all" disabled selected>Select a BASIC value</option>
     <option value="all">All BASIC Values</option>
@@ -131,16 +131,16 @@ export default function ListView(){
                 ))}
             </tbody>
         </table>
-         <div className="pagination">
+         <div className="pagination p-2">
             <button
-            className="px-6 py-4"
+            className="px-4 py-2 bg-blue-500 text-white hover:bg-blue-700 rounded ml-2"
             onClick={() => setCurrentPage(currentPage - 1)}
             disabled={currentPage === 1}>
                 Previous
             </button>
-            <span>{currentPage}</span>
+            <span className="p-2">{currentPage}</span>
             <button
-            className="px-6 py-4"
+            className="px-4 py-2 bg-blue-500 text-white hover:bg-blue-700 rounded ml-2"
             onClick={() => setCurrentPage(currentPage + 1)}
             disabled= {endIndex >= data.length}
             >Next
