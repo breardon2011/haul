@@ -34,7 +34,6 @@ export const VehicleDetailView = () => {
             const data = await response.json()
 
             setData(data)
-            console.log(data) 
             loadVinData(data.vehicle_id_number)
         }
         catch(error){
