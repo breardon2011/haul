@@ -18,7 +18,7 @@ export const InspectionDetailView = () => {
             
             setData(data)
             setIsLoading(false) 
-            console.log(data)
+       
 
         }catch(error){
             console.error("Error loading data: ", error)
